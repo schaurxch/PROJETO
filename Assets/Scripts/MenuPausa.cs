@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
     public static bool jogoPausado = false;
     public GameObject menuPausaUI;
     
-
     private void Start()
     {
         menuPausaUI.SetActive(false);
@@ -28,7 +27,6 @@ public class MenuPausa : MonoBehaviour
             }
         }
     }
-
     public void RetomarJogo()
     {
         Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
@@ -45,9 +43,8 @@ public class MenuPausa : MonoBehaviour
         jogoPausado = true;
     }
 
-    //public void VoltarMenuInicial()
-    //{
-        //Time.timeScale = 1f;
-       // SceneManager.LoadScene("MenuInicial");
-    //}
+    public void VoltarMenuInicial()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
